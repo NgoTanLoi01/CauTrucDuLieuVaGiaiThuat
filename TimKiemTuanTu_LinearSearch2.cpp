@@ -1,12 +1,16 @@
 #include <stdio.h>
 #include "stdlib.h"
 int linearSearch(int a[], int k, int n){
-	for(int i = 0; i < n; i++){
-		if(a[i]==k){
-			return i;
-		}
+	a[n] = k;
+	int i = 0;
+	while (a[i]!=k){
+		i = i+1;
 	}
-	return -1;
+	if(i<n){
+		return i;
+	}else{
+		return -1;
+	}
 }
 
 int main(){
