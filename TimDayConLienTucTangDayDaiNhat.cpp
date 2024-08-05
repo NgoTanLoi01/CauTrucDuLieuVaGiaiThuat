@@ -1,20 +1,13 @@
 #include<stdio.h>
 
 struct ket_qua {
-	int tong;
-	int bat_dau;
+	int i_max;
+	int max_length;
 	int ket_thuc;
 };
 
-int tinhTong(int a[100], int bat_dau, int ket_thuc){
-	int tong = 0;
-	for(int x = bat_dau; x <= ket_thuc; x++){
-		tong+=a[x];
-	}
-	return tong;
-}
 
-ket_qua timTongConCoTongLonNhat(int a[100], int n){
+ket_qua timTongCongCoTongLonNhat(int a[100], int n){
 	ket_qua kq;
 	kq.tong = a[0];
 	kq.bat_dau = 0;
@@ -45,7 +38,7 @@ int main(){
 		scanf("%d", &a[i]);
 	}
 	
-	ket_qua k = timTongConCoTongLonNhat(a, n);
+	ket_qua k = timTongCongCoTongLonNhat(a, n);
 	
 	printf("\nTong con lien tuc lon nhat la: %d", k.tong);
 	printf("\nTu vi tri %d den vi tri %d", k.bat_dau, k.ket_thuc);
